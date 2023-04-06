@@ -9,37 +9,33 @@ public class simpleBot extends TelegramLongPollingBot {
         String command = update.getMessage().getText();
         String message;
         SendMessage response = new SendMessage();
-        switch (command) {
-            case "/run":
-                message = "Running man, fuck off!";
-                response.setChatId(update.getMessage().getChatId().toString());
-                response.setText(message);
-                try {
-                    execute(response);
-                } catch (TelegramApiException t) {
-                    t.printStackTrace();
-                }
-                break;
-            case "/help":
-                message = "Go Kill yourself";
-                response.setChatId(update.getMessage().getChatId().toString());
-                response.setText(message);
-                try {
-                    execute(response);
-                } catch (TelegramApiException t) {
-                    t.printStackTrace();
-                }
-                break;
-            case "/info":
-                message = "Don't need my info!";
-                response.setChatId(update.getMessage().getChatId().toString());
-                response.setText(message);
-                try {
-                    execute(response);
-                } catch (TelegramApiException t) {
-                    t.printStackTrace();
-                }
-                break;
+        if(command.contains("GeoPay Georgia payout")) {
+            message = "Geo pay georgia payout";
+            response.setChatId(update.getMessage().getChatId().toString());
+            response.setText(message);
+            try {
+                execute(response);
+            } catch (TelegramApiException t) {
+                t.printStackTrace();
+            }
+        }else if(command.contains("GeoPay Georgia deposit")) {
+            message = "Geo pay georgia deposit";
+            response.setChatId(update.getMessage().getChatId().toString());
+            response.setText(message);
+            try {
+                execute(response);
+            } catch (TelegramApiException t) {
+                t.printStackTrace();
+            }
+        }else if(command.contains("iPay Georgia deposit")){
+            message = "iPay Georgia deposit";
+            response.setChatId(update.getMessage().getChatId().toString());
+            response.setText(message);
+            try {
+                execute(response);
+            } catch (TelegramApiException t) {
+                t.printStackTrace();
+            }
         }
     }
     @Override
