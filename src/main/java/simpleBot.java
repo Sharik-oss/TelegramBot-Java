@@ -36,6 +36,15 @@ public class simpleBot extends TelegramLongPollingBot {
             } catch (TelegramApiException t) {
                 t.printStackTrace();
             }
+        }else if(command.contains("TBC Georgia deposit")){
+            message = "TBC Georgia deposit";
+            response.setChatId(update.getMessage().getChatId().toString());
+            response.setText(message);
+            try {
+                execute(response);
+            } catch (TelegramApiException t) {
+                t.printStackTrace();
+            }
         }
     }
     @Override
